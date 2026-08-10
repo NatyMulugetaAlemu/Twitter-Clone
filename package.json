@@ -2,9 +2,9 @@
   "name": "instagramclone",
   "version": "1.0.0",
   "description": "",
-  "main": "backend/src/server.js",
+  "main": "backend/server.js",
   "scripts": {
-    "dev": "nodemon backend/src/server.js",
+    "dev": "nodemon backend/server.js",
     "start":"node backend/server.js"
   },
   "keywords": [],
