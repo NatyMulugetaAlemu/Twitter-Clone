@@ -24,6 +24,7 @@ export const signup = async (req, res) => {
 		if (password.length < 6) {
 			return res.status(400).json({ error: "Password must be at least 6 characters long" });
 		}
+
 		const hashedPassword = await bcrypt.hash(password, 10);
 
 		const newUser = new User({
@@ -32,7 +33,7 @@ export const signup = async (req, res) => {
 			email,
 			password: hashedPassword,
 		});
-
+		
 		if (newUser) {
 			generateTokenAndSetCookie(newUser._id, res);
 			await newUser.save();
@@ -56,10 +57,10 @@ export const signup = async (req, res) => {
 	}
 };
 
-export const login=async(req,res)=>{
-    
+export const login = async (req, res) => {
+
 }
 
-export const logout=async(req,res)=>{
-    
+export const logout = async (req, res) => {
+
 }
