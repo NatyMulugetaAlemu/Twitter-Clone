@@ -3,6 +3,7 @@ import dotenv from "dotenv"
 dotenv.config()
 import authRoutes from "./routes/authRoutes.js"
 import userRoutes from "./routes/userRoutes.js"
+import postRoutes from "./routes/postRoutes.js"
 import connectMONGODB from "./db/connectMONGODB.js"
 import dns from "node:dns";
 import cookieParser from "cookie-parser"
@@ -19,6 +20,7 @@ app.use(cookieParser())
 
 app.use("/api/auth",authRoutes)
 app.use("/api/users",userRoutes)
+app.use("/api/posts",postRoutes)
 
 app.get("/",(req,res)=>{
     res.json({message:"Server is okay"})
