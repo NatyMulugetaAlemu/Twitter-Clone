@@ -4,6 +4,7 @@ dotenv.config()
 import authRoutes from "./routes/authRoutes.js"
 import connectMONGODB from "./db/connectMONGODB.js"
 import dns from "node:dns";
+import cookieParser from "cookie-parser"
 dns.setServers(["1.1.1.1", "1.0.0.1"]);
 
 const app=express()
@@ -11,6 +12,7 @@ const app=express()
 const PORT=process.env.PORT
 
 app.use(express.json())
+app.use(cookieParser())
 app.use("/api/auth",authRoutes)
 
 app.get("/",(req,res)=>{
